@@ -34,4 +34,4 @@ jobs:
           username: ${{ secrets.CI_REGISTRY_USER }}
           password: ${{ secrets.CI_REGISTRY_PASSWORD }}
       - name: Build Python Docker image for ${{ inputs.version }}
-        run: docker build docker/${{ inputs.version }} --file Dockerfile --tag ${CI_REGISTRY_ORGANIZATION}:${{ inputs.version }}
+        run: docker build docker/${{ inputs.version }} --file Dockerfile --tag ${{ secrets.CI_REGISTRY_ORGANIZATION }}:${{ inputs.version }}
