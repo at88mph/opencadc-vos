@@ -38,4 +38,4 @@ jobs:
         with:
           context: ./docker/${{ inputs.version }}/
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ secrets.CI_REGISTRY_ORGANIZATION }}/vos:${{ inputs.version }}
+          tags: ${{ secrets.CI_REGISTRY_ORGANIZATION }}/vos:${{ inputs.version }}-slim
