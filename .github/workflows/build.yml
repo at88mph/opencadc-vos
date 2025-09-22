@@ -2,17 +2,11 @@ name: Docker Image builds
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "main" ]
 
 jobs:
-
-  build-3_10:
-    uses: ./.github/workflows/docker.yml
-    secrets: inherit
-    with:
-      version: '3.10'
 
   build-3_11:
     uses: ./.github/workflows/docker.yml
@@ -25,3 +19,9 @@ jobs:
     secrets: inherit
     with:
       version: '3.12'
+
+  build-3_13:
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+    with:
+      version: '3.13'
