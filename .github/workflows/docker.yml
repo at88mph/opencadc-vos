@@ -36,6 +36,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          platforms: linux/amd64,linux/arm64
           context: ./docker/${{ inputs.version }}/
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ secrets.CI_REGISTRY_ORGANIZATION }}/vos:${{ inputs.version }}-slim
