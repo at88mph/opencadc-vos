@@ -8,12 +8,6 @@ on:
 
 jobs:
 
-  build-3_11:
-    uses: ./.github/workflows/docker.yml
-    secrets: inherit
-    with:
-      version: '3.11'
-
   build-3_12:
     uses: ./.github/workflows/docker.yml
     secrets: inherit
@@ -25,3 +19,9 @@ jobs:
     secrets: inherit
     with:
       version: '3.13'
+
+  build-3_14:
+    uses: ./.github/workflows/docker.yml
+    secrets: inherit
+    with:
+      version: '3.14'

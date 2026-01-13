@@ -2,12 +2,10 @@ ARG OPENCADC_PYTHON_VERSION=3.13
 
 FROM python:${OPENCADC_PYTHON_VERSION}-slim as builder
 
-ARG VOS_PACKAGE=vos
-
 RUN apt-get update \
     && apt-get install -y gcc git libc-dev libffi-dev libmagic-dev libssl-dev libxslt-dev make
 
-RUN pip install --no-cache-dir ${VOS_PACKAGE}
+RUN pip install --no-cache-dir vos
 
 
 FROM python:${OPENCADC_PYTHON_VERSION}-slim
